@@ -11,16 +11,6 @@
   gap: 15px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 10px;
-}
-
-.carousel::-webkit-scrollbar {
-  height: 8px;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
 }
 
 .bookCard {
@@ -58,4 +48,23 @@
   border-radius: 50%;
   width: 30px;
   height: 30px;
+}
+
+/* Style for WebKit browsers (Chrome, Safari) */
+.carousel::-webkit-scrollbar {
+  height: 2px; /* Horizontal scrollbar height */
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background */
+  border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #ff5722; /* Bright thumb color */
+  border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: #ff9800; /* Darker thumb on hover */
 }

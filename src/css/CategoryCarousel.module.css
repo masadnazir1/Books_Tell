@@ -17,11 +17,11 @@
 }
 
 .categoryList::-webkit-scrollbar {
-  height: 6px;
+  height: 2px;
 }
 
 .categoryList::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #605f5f;
   border-radius: 10px;
 }
 
