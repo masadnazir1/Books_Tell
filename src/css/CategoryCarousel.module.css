@@ -1,0 +1,48 @@
+.categoryContainer {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 100;
+  padding: 5px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.categoryList {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.categoryList::-webkit-scrollbar {
+  height: 6px;
+}
+
+.categoryList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.categoryButton {
+  flex: 0 0 auto;
+  padding: 8px 15px;
+  border: none;
+  background: #f1f1f1;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+.categoryButton:hover {
+  background: #ddd;
+}
+
+.active {
+  background: #000;
+  color: white;
+  font-weight: bold;
+}
