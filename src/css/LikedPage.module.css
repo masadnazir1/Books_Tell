@@ -11,6 +11,8 @@
   justify-content: space-between;
   align-items: left;
   width: 100%;
+  position: sticky;
+  top: 5px;
 }
 .LikedPageHeading {
   font-size: 100%;

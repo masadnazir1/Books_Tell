@@ -4,7 +4,7 @@ import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
 import LikedPage from "./pages/LikedPage";
-
+import SingleBookPage from "./pages/SingleBook";
 import BottomTabs from "./BottomTabs/Tabs";
 
 import "./App.css";
@@ -18,6 +18,7 @@ function App() {
           <Route path="/Explore" element={<SearchPage />} />
           <Route path="/Liked" element={<LikedPage />} />
           <Route path="/Profile" element={<ProfilePage />} />
+          <Route path="/SingleBook" element={<SingleBookPage />} />
         </Routes>
       </div>
       <BottomTabs />
