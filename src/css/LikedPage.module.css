@@ -1,0 +1,62 @@
+.LikedPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-bottom: 65px;
+}
+
+.LikedPageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+}
+.LikedPageHeading {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.LikedPageInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.LikedPictureBox {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.LikedPicture {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.LikedPageButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.settingsIcon {
+  color: #000000;
+  font-size: 1.5rem;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}

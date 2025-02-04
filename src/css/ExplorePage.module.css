@@ -1,0 +1,63 @@
+.ExplorePageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-bottom: 65px;
+}
+
+.ExplorePageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+}
+.ExplorePageHeading {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.SearchSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 5px;
+}
+
+.SearchBar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 2px;
+}
+.SearchButton {
+  background-color: transparent;
+  color: #fff;
+
+  border: none;
+  cursor: pointer;
+}
+.icon {
+  width: 30px;
+}
+.SearchInput {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+.ExplorePageInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
