@@ -38,6 +38,7 @@ const BookCarousel = ({ title, books }) => {
               className={styles.bookCover}
             />
             <p className={styles.bookName}>{book.title}</p>
+            <p className={styles.bookName}>{book.author}</p>
           </div>
         ))}
       </div>

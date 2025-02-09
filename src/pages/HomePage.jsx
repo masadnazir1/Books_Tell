@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import BookCarousel from "../components/BookCarousel";
 import Styles from "../css/HomePage.module.css";
 import axios from "axios";
+import URL from "../utils/API";
 import CategoryCarousel from "../components/CategoryCarousel";
 
 const HomePage = () => {
@@ -12,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     const categories = async () => {
       try {
-        const api = "http://localhost:5000/api/categories";
+        const api = `${URL}/api/categories`;
         const response = await axios.get(api);
         // Extract category names
         const categoryNames = response.data.map((category) => category.name);
@@ -25,7 +26,7 @@ const HomePage = () => {
 
     const books = async () => {
       try {
-        const api = "http://localhost:5000/api/GetAllBooks";
+        const api = `${URL}/api/GetAllBooks`;
         const res = await axios.get(api);
 
         // Transform the data to include the category name if exists
@@ -33,7 +34,7 @@ const HomePage = () => {
           ...item,
           Category: item.Category ? item.Category.name : null,
           // Constructing the full URL for the cover image
-          cover_image_url: `http://localhost:5000${item.cover_image_url}`,
+          cover_image_url: `${URL}${item.cover_image_url}`,
         }));
         setbapiBooks(transformedData);
         console.log(transformedData);

@@ -5,6 +5,7 @@ import back from "../assets/General/back.png";
 import sound from "../assets/General/sound.png";
 import like from "../assets/TabsIcons/Heart.png";
 import Modal from "../components/ModalProfile";
+import URL from "../utils/API";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const SingleBookPage = () => {
@@ -24,7 +25,7 @@ const SingleBookPage = () => {
     const fetchSegments = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/GetMeta/${book.Category}/${book.title}/segments`
+          `${URL}/api/GetMeta/${book.Category}/${book.title}/segments`
         );
         setSegments(response.data.segments || []);
       } catch (error) {
@@ -83,8 +84,30 @@ const SingleBookPage = () => {
     }
   };
 
+  //add the book to the shelf
+  const addtoShelf = async () => {
+    const data = {
+      user_id: "1234",
+      book_id: "12345",
+    };
+
+    try {
+      const response = await axios.post(`${URL}/api/AddToMyShelf/`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(response.data);
+      if (response.status === 200) {
+        alert(response.data.ok);
+      }
+    } catch (error) {
+      console.error("Error adding the book to the shelf");
+    }
+  };
+
   const AUDIO_URL = segments.length
-    ? `http://localhost:5000/api/GetSeg/${book.Category}/${book.title}/${segments[currentIndex]}`
+    ? `${URL}/api/GetSeg/${book.Category}/${book.title}/${segments[currentIndex]}`
     : "";
 
   return (
@@ -119,14 +142,6 @@ const SingleBookPage = () => {
           <strong className={Styles.BookTitle}>{book.title}</strong>
           <p className={Styles.BookAuthor}>By: {book.author}</p>
         </div>
-        <div className={Styles.Action}>
-          <button
-            className={Styles.ActionButton}
-            onClick={() => setIsModalOpen(true)}
-          >
-            <img src={like} alt="Like" className={Styles.LikeIcon} />
-          </button>
-        </div>
       </section>
       <div className={Styles.containerPlayer}>
         {segments.length > 0 ? (
@@ -159,6 +174,11 @@ const SingleBookPage = () => {
               >
                 ⏭
               </button>
+              <div className={Styles.Action}>
+                <button className={Styles.ActionButton} onClick={addtoShelf}>
+                  <img src={like} alt="Like" className={Styles.LikeIcon} />
+                </button>
+              </div>
             </div>
             <div className={Styles.RangeContainer}>
               <input
@@ -183,11 +203,11 @@ const SingleBookPage = () => {
           <p>Loading segments...</p>
         )}
       </div>
-
+      {/* 
       <section className={Styles.BookActions}>
         <button className={Styles.ActionButtonRead}>Read</button>
         <button className={Styles.ActionButtonListen}>Listen</button>
-      </section>
+      </section> */}
 
       <section className={Styles.BookDescription}>
         <strong>Description</strong>
