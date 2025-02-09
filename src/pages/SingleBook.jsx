@@ -154,31 +154,41 @@ const SingleBookPage = () => {
               autoPlay={isPlaying}
             />
             <div className={Styles.controls}>
-              <button
-                onClick={handlePrevious}
-                disabled={currentIndex === 0}
-                className={Styles.ControlButtons}
-              >
-                ⏮
-              </button>
-              <button
-                onClick={togglePlayPause}
-                className={Styles.ControlButtons}
-              >
-                {isPlaying ? "⏸" : "▶"}
-              </button>
-              <button
-                className={Styles.ControlButtons}
-                onClick={handleNext}
-                disabled={currentIndex === segments.length - 1}
-              >
-                ⏭
-              </button>
-              <div className={Styles.Action}>
-                <button className={Styles.ActionButton} onClick={addtoShelf}>
-                  <img src={like} alt="Like" className={Styles.LikeIcon} />
+              {/* <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.1"
+                value={volume}
+                onChange={(e) => setVolume(e.target.value)}
+                className={Styles.sliderVolum}
+              /> */}
+              <div className={Styles.ControlButtonsAudio}>
+                <button
+                  onClick={handlePrevious}
+                  disabled={currentIndex === 0}
+                  className={Styles.ControlButtons}
+                >
+                  ⏮
+                </button>
+                <button
+                  onClick={togglePlayPause}
+                  className={Styles.ControlButtons}
+                >
+                  {isPlaying ? "⏸" : "▶"}
+                </button>
+                <button
+                  className={Styles.ControlButtons}
+                  onClick={handleNext}
+                  disabled={currentIndex === segments.length - 1}
+                >
+                  ⏭
                 </button>
               </div>
+
+              <button className={Styles.ActionButton} onClick={addtoShelf}>
+                <img src={like} alt="Like" className={Styles.LikeIcon} />
+              </button>
             </div>
             <div className={Styles.RangeContainer}>
               <input
@@ -186,15 +196,6 @@ const SingleBookPage = () => {
                 value={progress}
                 max="100"
                 onChange={handleSeek}
-                className={Styles.slider}
-              />
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={volume}
-                onChange={(e) => setVolume(e.target.value)}
                 className={Styles.slider}
               />
             </div>
