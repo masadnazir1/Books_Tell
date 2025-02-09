@@ -1,22 +1,19 @@
 import React from "react";
-import styles from "../css/BookCarousel.module.css"; // Import CSS Module
+import styles from "../css/BookCarousel.module.css";
 import { useNavigate } from "react-router-dom";
-import Arrow from "../assets/Books/RightArrow.png"; // Import Image
-//
-//
+import Arrow from "../assets/Books/RightArrow.png";
 
 const BookCarousel = ({ title, books }) => {
   const navigate = useNavigate();
+
   const handleArrowClick = () => {
     alert("Arrow Clicked");
   };
-  //
-  const handleSelect = (e) => {
-    console.log(books.name);
-    e.preventDefault();
-    navigate("/SingleBook");
+
+  const handleSelect = (book) => {
+    console.log(book.title, book.id); // Log the book's name
+    navigate("/SingleBook", { state: { book } }); // Passing the book to the detail page
   };
-  //
 
   return (
     <div className={styles.container}>
@@ -30,13 +27,17 @@ const BookCarousel = ({ title, books }) => {
 
       <div className={styles.carousel}>
         {books.map((book, index) => (
-          <div key={index} className={styles.bookCard} onClick={handleSelect}>
+          <div
+            key={index}
+            className={styles.bookCard}
+            onClick={() => handleSelect(book)}
+          >
             <img
-              src={book.cover}
+              src={book.cover_image_url}
               alt={book.name}
               className={styles.bookCover}
             />
-            <p className={styles.bookName}>{book.name}</p>
+            <p className={styles.bookName}>{book.title}</p>
           </div>
         ))}
       </div>

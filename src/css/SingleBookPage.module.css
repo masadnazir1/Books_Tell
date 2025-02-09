@@ -100,3 +100,86 @@
 .BookDescription {
   padding: 15px;
 }
+
+.containerPlayer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ControlButtons {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #000000;
+  color: #ffff;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+}
+.ControlButtons:hover {
+  background-color: #ccc;
+}
+
+.RangeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #ff8c00 0%, #ff4500 100%);
+  border-radius: 1px;
+  outline: none;
+  margin: 10px 10px;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Customize the thumb for WebKit browsers (Chrome, Safari) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid #ff4500;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #ff4500;
+}
+
+/* Customize the thumb for Firefox */
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid #ff4500;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: #ff4500;
+}
