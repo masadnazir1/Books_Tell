@@ -20,7 +20,7 @@ const BookCarousel = ({ title, books }) => {
       <div className={styles.headerContainer}>
         <h2 className={styles.carouselTitle}>{title}</h2>
         <div className={styles.seeAllContainer} onClick={handleArrowClick}>
-          <strong>See All</strong>
+          <strong className={styles.Strong}>See All</strong>
           <img src={Arrow} alt="more books" className={styles.Arrow}></img>
         </div>
       </div>
@@ -38,7 +38,7 @@ const BookCarousel = ({ title, books }) => {
               className={styles.bookCover}
             />
             <p className={styles.bookName}>{book.title}</p>
-            <p className={styles.bookName}>{book.author}</p>
+            <p className={styles.bookAuthorName}>{book.author}</p>
           </div>
         ))}
       </div>

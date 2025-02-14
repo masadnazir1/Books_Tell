@@ -41,7 +41,7 @@
 
 .BookInfoBox {
   width: 100%;
-
+  color: #000000;
   display: flex;
   justify-content: space-between;
 }
@@ -99,6 +99,7 @@
 }
 .BookDescription {
   padding: 10px 10px 100px;
+  color: #000;
 }
 
 .containerPlayer {
@@ -138,7 +139,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 0px 10px;
 }
 .slider {
   -webkit-appearance: none;
@@ -238,4 +239,54 @@
   display: flex;
   gap: 10px;
   margin: 5px;
+}
+
+.Playbacktime {
+  color: #000;
+}
+
+.speedControls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SpeedButton {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.SpeedButton:hover {
+  background-color: #ccc;
+}
+
+.speedDropdown {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  width: 80px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.speedDropdown li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.speedDropdown li:hover {
+  background: #f0f0f0;
 }

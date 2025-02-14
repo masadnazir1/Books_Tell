@@ -18,6 +18,7 @@
   margin-bottom: 1rem;
   text-align: left;
   margin-left: 10px;
+  color: #000;
 }
 
 .SearchSection {
@@ -36,6 +37,7 @@
   width: 90%;
   justify-content: center;
   border: 2px solid #000;
+  background-color: #fff;
   border-radius: 2px;
 }
 .SearchButton {
@@ -50,14 +52,16 @@
 }
 .SearchInput {
   width: 100%;
+  color: #000;
   padding: 5px;
   border: none;
   outline: none;
+  background-color: #fff;
 }
 .ExplorePageInfo {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100vh;
+  width: 90%;
   flex-direction: column;
 }

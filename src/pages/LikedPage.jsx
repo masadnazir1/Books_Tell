@@ -1,9 +1,10 @@
 import React from "react";
 import Styles from "../css/LikedPage.module.css";
-import empty from "../assets/MyShelf/Empty.png";
+
 import settings from "../assets/General/settings.png";
 
 const LikedPage = () => {
+  const empty = "https://cdn-icons-png.flaticon.com/128/982/982070.png";
   return (
     <div className={Styles.LikedPageContainer}>
       <div className={Styles.LikedPageHeader}>

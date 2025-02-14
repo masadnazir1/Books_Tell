@@ -1,6 +1,7 @@
 import React from "react";
 import Styles from "../css/ExplorePage.module.css";
 import empty from "../assets/TabsIcons/Search.png";
+import CategoriesBox from "../components/Explore/CategoriesBox";
 
 const SearchPage = () => {
   return (
@@ -20,7 +21,9 @@ const SearchPage = () => {
           />
         </div>
       </section>
-      <section className={Styles.ExplorePageInfo}></section>
+      <section className={Styles.ExplorePageInfo}>
+        <CategoriesBox />
+      </section>
     </div>
   );
 };

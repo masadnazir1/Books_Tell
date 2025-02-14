@@ -24,7 +24,7 @@ const ProfilePage = () => {
         <div className={Styles.PictureBox}>
           <img src={UserIcon} alt="User Icon" className={Styles.UserPicture} />
         </div>
-        <b>Hi</b>
+        <b className={Styles.Username}>Hi</b>
         <button className={Styles.ProfileButton}>Edit Profile</button>
       </section>
       <section className={Styles.ProfileMenue}>
