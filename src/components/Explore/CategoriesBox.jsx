@@ -10,7 +10,7 @@ const CategoriesBox = () => {
 
   useEffect(() => {
     axios
-      .get(`${URL}/api/categories`)
+      .get(`${URL}/api/categoriesPage`)
       .then((response) => {
         if (response.data.success) {
           setCategories(response.data.categories);
