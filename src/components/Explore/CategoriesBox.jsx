@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "../../css/CategoriesBox.module.css"; // Import CSS Module
 import ActivityIndicator from "../Loading/ActivityIndicator";
+import URL from "../../utils/API";
 
 const CategoriesBox = () => {
   const [categories, setCategories] = useState([]);
@@ -9,7 +10,7 @@ const CategoriesBox = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/categories")
+      .get(`${URL}/api/categories`)
       .then((response) => {
         if (response.data.success) {
           setCategories(response.data.categories);
