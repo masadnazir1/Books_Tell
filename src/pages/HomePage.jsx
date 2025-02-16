@@ -4,18 +4,22 @@ import Styles from "../css/HomePage.module.css";
 import axios from "axios";
 import URL from "../utils/API";
 import CategoryCarousel from "../components/CategoryCarousel";
+import ActivityIndicator from "../components/Loading/ActivityIndicator";
 
 const HomePage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [apiBooks, setbapiBooks] = useState([]);
   const [categories, setcategories] = useState([]);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
     const categories = async () => {
+      setloading(true);
       try {
         const api = `${URL}/api/categories`;
         const response = await axios.get(api);
         // Extract category names
+        setloading(false);
         const categoryNames = response.data.map((category) => category.name);
         setcategories(["All", ...categoryNames]);
       } catch (error) {
@@ -25,10 +29,12 @@ const HomePage = () => {
     categories();
 
     const books = async () => {
+      setloading(true);
       try {
         const api = `${URL}/api/GetAllBooks`;
         const res = await axios.get(api);
 
+        setloading(false);
         // Transform the data to include the category name if exists
         const transformedData = res.data.map((item) => ({
           ...item,
@@ -39,6 +45,7 @@ const HomePage = () => {
         setbapiBooks(transformedData);
         console.log(transformedData);
       } catch (error) {
+        setloading(false);
         console.error("Error fetching books", error);
       }
     };
@@ -58,11 +65,14 @@ const HomePage = () => {
 
   return (
     <div className={Styles.container}>
+      {loading && <ActivityIndicator size="30px" color="#000" />}
+
       <CategoryCarousel
         categories={categories}
         activeCategory={activeCategory}
         onCategoryClick={handleCategoryClick}
       />
+
       <BookCarousel title="Popular Books" books={filteredBooks} />
     </div>
   );

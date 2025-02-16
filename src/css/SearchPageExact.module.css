@@ -1,0 +1,138 @@
+.ExplorePageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-bottom: 65px;
+}
+
+.ExplorePageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+}
+.ExplorePageHeading {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+  margin-left: 10px;
+  color: #000;
+}
+
+.SearchSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 5px;
+  gap: 20px;
+}
+
+.SearchBar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  justify-content: center;
+  border: 2px solid #000;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.SearchButton {
+  background-color: transparent;
+  color: #fff;
+
+  border: none;
+  cursor: pointer;
+}
+.icon {
+  width: 30px;
+}
+.SearchInput {
+  width: 100%;
+  color: #000;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+.ExplorePageInfo {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 90%;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.BackIconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.BackIcon {
+  width: 40px;
+  cursor: pointer;
+}
+.BackIcon:hover {
+  background-color: #ccc;
+}
+
+.book {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #000;
+  gap: 20px;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.065); /* Light shadow */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.bookBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.ImgageBox {
+  margin-right: 10px;
+}
+.bookDetailsBOX {
+  width: 100%;
+}
+.ActionBox {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.ActionButtons {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 100px;
+  border: 1px solid #000;
+}
+.ActionButtons:hover {
+  background-color: #ccc;
+  border-radius: 100px;
+  transition: ease-in-out 0.5s;
+}
+.PlayButton {
+  width: 10%;
+}

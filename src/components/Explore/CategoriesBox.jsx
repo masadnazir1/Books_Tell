@@ -9,11 +9,13 @@ const CategoriesBox = () => {
   const [Loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${URL}/api/categoriesPage`)
       .then((response) => {
         if (response.data.success) {
           setCategories(response.data.categories);
+          setLoading(false);
         }
       })
       .catch((error) => console.error("Error fetching categories:", error));
