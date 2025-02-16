@@ -5,6 +5,7 @@ import Styles from "../css/SearchPageExact.module.css";
 import empty from "../assets/TabsIcons/Search.png";
 import { useNavigate } from "react-router-dom";
 import URL from "../utils/API";
+import GlobalAudioPlayer from "../components/GlobalAudioPlayer";
 import ActivityIndicator from "../components/Loading/ActivityIndicator";
 
 const SearchPageExact = () => {
@@ -12,11 +13,18 @@ const SearchPageExact = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [Loading, SetLoading] = useState(false);
+  const [isPlayerVisible, setIsPlayerVisible] = useState(false);
   ///
   const handleSelect = (book) => {
     console.log(book.title, book.id); // Log the book's name
     Navigate("/SingleBook", { state: { book } }); // Passing the book to the detail page
   };
+
+  useEffect(() => {
+    // Check if GlobalAudioPlayer is rendered
+    const playerElement = document.querySelector(".global-audio-player");
+    setIsPlayerVisible(!!playerElement);
+  }, []);
   // Debounced API call to reduce unnecessary requests
 
   const fetchBooks = debounce(async (searchQuery) => {
@@ -80,9 +88,6 @@ const SearchPageExact = () => {
   //
   return (
     <div className={Styles.ExplorePageContainer}>
-      <div className={Styles.ExplorePageHeader}>
-        <h1 className={Styles.ExplorePageHeading}>Explore</h1>
-      </div>
       <section className={Styles.SearchSection}>
         <div className={Styles.BackIconBox}>
           <img
@@ -105,7 +110,12 @@ const SearchPageExact = () => {
           />
         </div>
       </section>
-      <section className={Styles.ExplorePageInfo}>
+
+      <section
+        className={`${Styles.ExplorePageInfo} ${
+          isPlayerVisible ? Styles.WithPlayer : ""
+        }`}
+      >
         {Loading && <ActivityIndicator color="#000" width="40px" />}
         {results.length > 0
           ? results.map((book) => (
@@ -150,6 +160,10 @@ const SearchPageExact = () => {
               </div>
             ))
           : query && <p>No results found</p>}
+
+        <div className="global-audio-player">
+          <GlobalAudioPlayer />
+        </div>
       </section>
     </div>
   );
